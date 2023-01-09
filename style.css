@@ -1,0 +1,77 @@
+@keyframes float {
+    0% {
+        transform: rotate(var(--rotation)) translateX(var(--position-x)) translateY(var(--position-y));
+    }
+    50% {
+        transform: rotate(var(--rotation)) translateX(var(--position-x)) translateY(calc(var(--position-y) - 5px));
+    }
+    100% {
+        transform: rotate(var(--rotation)) translateX(var(--position-x)) translateY(var(--position-y));
+    }
+}
+
+body {
+    background-color: rgb(22, 0, 39);
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+}
+
+span {
+    position: absolute;
+}
+
+.variant1 {
+    color: white;
+    font-size: 2rem;
+}
+
+.variant1::after {
+    content: '\00a9 \2117  2023 Cutie Patootie Records'
+}
+
+.variant2 {
+    color: rgb(182, 131, 197);
+    font-size: 3rem;
+}
+
+.variant2::after {
+    content: 'Cutie Patootie Records';
+}
+
+.variant3 {
+    color: rgb(165, 110, 204);
+    font-size: 2rem;
+}
+
+.variant3::after {
+    content: 'CUTIE PATOOTS';
+}
+
+.variant4 {
+    color: rgb(70, 1, 126);
+    font-size: 5rem;
+}
+
+.variant4::after {
+    content: 'cuties';
+}
+
+.variant5 {
+    color: rgb(99, 24, 127);
+    font-size: 4rem;
+}
+
+.variant5::after {
+    content: 'cuties';
+}
+
+.variant6 {
+    color: rgb(92, 88, 103);
+    font-size: 4rem;
+}
+
+.variant6::after {
+    content: '@cutiepatootierecords'
+}
