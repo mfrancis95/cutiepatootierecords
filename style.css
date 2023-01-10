@@ -1,12 +1,12 @@
 @keyframes float {
     0% {
-        transform: rotate(var(--rotation)) translateX(var(--position-x)) translateY(var(--position-y));
+        transform: rotate(var(--rotation)) translateY(0);
     }
     50% {
-        transform: rotate(var(--rotation)) translateX(var(--position-x)) translateY(calc(var(--position-y) - 5px));
+        transform: rotate(var(--rotation)) translateY(-5px);
     }
     100% {
-        transform: rotate(var(--rotation)) translateX(var(--position-x)) translateY(var(--position-y));
+        transform: rotate(var(--rotation)) translateY(0);
     }
 }
 
@@ -19,11 +19,15 @@ body {
 }
 
 span {
+    animation: float var(--float-duration) ease-in-out var(--float-delay) infinite;
+    color: var(--color);
+    filter: blur(var(--blur-radius)) drop-shadow(0 0 var(--drop-shadow-radius) var(--color)) opacity(var(--opacity));
     position: absolute;
+    white-space: nowrap;
 }
 
 .variant1 {
-    color: white;
+    --color: white;
     font-size: 2rem;
 }
 
@@ -32,7 +36,7 @@ span {
 }
 
 .variant2 {
-    color: rgb(182, 131, 197);
+    --color: rgb(182, 131, 197);
     font-size: 3rem;
 }
 
@@ -41,7 +45,7 @@ span {
 }
 
 .variant3 {
-    color: rgb(165, 110, 204);
+    --color: rgb(165, 110, 204);
     font-size: 2rem;
 }
 
@@ -50,7 +54,7 @@ span {
 }
 
 .variant4 {
-    color: rgb(70, 1, 126);
+    --color: rgb(70, 1, 126);
     font-size: 5rem;
 }
 
@@ -59,7 +63,7 @@ span {
 }
 
 .variant5 {
-    color: rgb(99, 24, 127);
+    --color: rgb(99, 24, 127);
     font-size: 4rem;
 }
 
@@ -68,7 +72,7 @@ span {
 }
 
 .variant6 {
-    color: rgb(92, 88, 103);
+    --color: rgb(92, 88, 103);
     font-size: 4rem;
 }
 
