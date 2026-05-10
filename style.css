@@ -1,81 +1,43 @@
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes float {
     0% {
-        transform: rotate(var(--rotation)) translateY(0);
+        transform: rotate(var(--rotation)) translate3d(0, 0, calc(var(--delta-y) + var(--z-position)));
     }
     50% {
-        transform: rotate(var(--rotation)) translateY(-5px);
+        transform: rotate(var(--rotation)) translate3d(0, -5px, calc(var(--delta-y) + var(--z-position)));
     }
     100% {
-        transform: rotate(var(--rotation)) translateY(0);
+        transform: rotate(var(--rotation)) translate3d(0, 0, calc(var(--delta-y) + var(--z-position)));
     }
 }
 
 body {
+    --delta-y: 0px;
     background-color: rgb(22, 0, 39);
     height: 100vh;
     margin: 0;
     overflow: hidden;
+    perspective: 1000px;
+    pointer-events: none;
+    transform-style: preserve-3d;
     width: 100vw;
 }
 
-span {
-    animation: float var(--float-duration) ease-in-out var(--float-delay) infinite;
+a, span {
+    animation: fade-in 2s ease-in var(--fade-delay) forwards, float var(--float-duration) ease-in-out var(--float-delay) infinite;
     color: var(--color);
     filter: blur(var(--blur-radius)) drop-shadow(0 0 var(--drop-shadow-radius) var(--color)) opacity(var(--opacity));
+    opacity: 0;
     position: absolute;
     white-space: nowrap;
+    will-change: transform, opacity;
 }
 
-.variant1 {
-    --color: white;
-    font-size: 2rem;
-}
-
-.variant1::after {
-    content: '\00a9 \2117  2023 Cutie Patootie Records'
-}
-
-.variant2 {
-    --color: rgb(182, 131, 197);
-    font-size: 3rem;
-}
-
-.variant2::after {
-    content: 'Cutie Patootie Records';
-}
-
-.variant3 {
-    --color: rgb(165, 110, 204);
-    font-size: 2rem;
-}
-
-.variant3::after {
-    content: 'CUTIE PATOOTS';
-}
-
-.variant4 {
-    --color: rgb(70, 1, 126);
-    font-size: 5rem;
-}
-
-.variant4::after {
-    content: 'cuties';
-}
-
-.variant5 {
-    --color: rgb(99, 24, 127);
-    font-size: 4rem;
-}
-
-.variant5::after {
-    content: 'cuties';
-}
-
-.variant6 {
-    --color: rgb(92, 88, 103);
-    font-size: 4rem;
-}
-
-.variant6::after {
-    content: '@cutiepatootierecords'
+a {
+    pointer-events: auto;
 }

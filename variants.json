@@ -1,0 +1,57 @@
+[
+    {
+        "color": "white",
+        "content": "© ℗ 2026 Cutie Patootie Records",
+        "count": {
+            "max": 75,
+            "min": 25
+        },
+        "fontSize": "2rem"
+    },
+    {
+        "color": "rgb(182, 131, 197)",
+        "content": "Cutie Patootie Records",
+        "count": {
+            "max": 75,
+            "min": 25
+        },
+        "fontSize": "3rem"
+    },
+    {
+        "color": "rgb(165, 110, 204)",
+        "content": "CUTIE PATOOTS",
+        "count": {
+            "max": 75,
+            "min": 25
+        },
+        "fontSize": "2rem"
+    },
+    {
+        "color": "rgb(70, 1, 126)",
+        "content": "cuties",
+        "count": {
+            "max": 75,
+            "min": 25
+        },
+        "fontSize": "5rem"
+    },
+    {
+        "color": "rgb(99, 24, 127)",
+        "content": "cuties",
+        "count": {
+            "max": 75,
+            "min": 25
+        },
+        "fontSize": "4rem"
+    },
+    {
+        "color": "rgb(92, 88, 103)",
+        "content": "@cutiepatootierecords",
+        "count": {
+            "max": 25,
+            "min": 5
+        },
+        "fontSize": "4rem",
+        "link": "https://www.instagram.com/cutiepatootierecords"
+    }
+]
