@@ -37,7 +37,17 @@ fetch('variants.json').then(response => response.json()).then(variants => {
     document.body.appendChild(fragment);
 });
 
-let deltaY = 0;
+let deltaY = 0, startY = 0;
+
+window.addEventListener('touchstart', event => {
+    startY = event.touches[0].pageY;
+}, { passive: true });
+
+window.addEventListener('touchmove', event => {
+    requestAnimationFrame(() => {
+        document.body.style.setProperty('--delta-y', `${deltaY += startY - event.touches[0].pageY}px`);
+    })
+}, { passive: true });
 
 window.addEventListener('wheel', event => {
     requestAnimationFrame(() => {
